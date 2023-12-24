@@ -13,6 +13,7 @@ import { Grid, styled } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
 import Sidebar from "./SideBar";
+import ToggleSideBar from "./ToggleSideBar";
 
 function Home() {
   const StyledGridItem = styled(Grid)(({ theme }) => ({
@@ -20,18 +21,22 @@ function Home() {
     border: "1px solid #ccc",
     // textAlign: "center",
   }));
+  const isSmallScreen = window.innerWidth <= 600; 
   return (
     <Box
       width="100%"
       height="100vh"
       sx={{ background: "#DADCE0" }}
       display="flex"
-      justifyContent="flex-end">
-      <Sidebar />
+      justifyContent="space-between">
+
+
+  
+    {isSmallScreen ? <ToggleSideBar/> : <Sidebar />} {/* Conditional rendering */}
 
       <Box
         borderRadius="15px"
-        width="85%"
+        width="88.5%"
         height="auto"
         sx={{ background: "white" }}>
         <Box display="flex" alignItems="center" padding="10px">
@@ -55,7 +60,7 @@ function Home() {
           Assessment Overview
         </Typography>
 
-        <Grid container spacing={2}>
+        <Grid container >
           <StyledGridItem
             item
             xs={6}

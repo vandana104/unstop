@@ -24,8 +24,7 @@ const SidebarItem = ({ icon, text }) => (
         background: "#E5F1FC",
         cursor: "pointer",
       },
-    }}
-  >
+    }}>
     <img style={{ width: "20px", height: "20px" }} src={icon} alt={text} />
     <Typography
       sx={{
@@ -33,8 +32,7 @@ const SidebarItem = ({ icon, text }) => (
         color: "#1C4980",
         fontWeight: "560",
         textAlign: "center",
-      }}
-    >
+      }}>
       {text === "Round Status"
         ? text.split(" ").map((word, index) => (
             <React.Fragment key={index}>
@@ -47,18 +45,16 @@ const SidebarItem = ({ icon, text }) => (
   </Box>
 );
 
-
 const Sidebar = () => (
   <Box
-sx={{paddingTop:"40px"}}
+    sx={{ paddingTop: "40px",background:"white", }}
     width="10%"
     height="100vh"
     display="flex"
     padding="20px 2px 0px 2px "
     flexDirection="column"
     alignItems="center"
-    gap="10px"
-  >
+    gap="10px">
     {[
       { icon: Dashboard, text: "Dashboard" },
       { icon: Assessment, text: "Assessment" },
@@ -79,8 +75,7 @@ sx={{paddingTop:"40px"}}
       height="65px"
       display="flex"
       alignItems="center"
-      justifyContent="center"
-    >
+      justifyContent="center">
       <Button
         sx={{
           width: "65px",
@@ -93,8 +88,7 @@ sx={{paddingTop:"40px"}}
           wordWrap: "break-word",
           textTransform: "none",
           background: "#FBEBEA",
-        }}
-      >
+        }}>
         Admin
       </Button>
     </Box>
@@ -104,8 +98,3 @@ sx={{paddingTop:"40px"}}
 );
 
 export default Sidebar;
-
-
-
-
-
